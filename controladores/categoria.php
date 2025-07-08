@@ -2,8 +2,7 @@
 // Incluimos el archivo Categoria.php
 require_once "../modelos/Categoria.php";
 //Instanciamos la clase categoria 
-$catergoria= new Categoria();
-
+$categoria= new Categoria();   
 //Definimos una variable para almacenar el idcategoria
 $idcategoria =isset ($_POST ["idcategoria"])? limpiarCadena ($_POST["idcategoria"]) :"";
 //definimos una variable para almacenar el nombre 
@@ -24,6 +23,24 @@ switch($_GET ["op"]){
             echo $rsparta ? "categoria editada con exito" : "No se pudo editar la categoria";
 
         }
+        break;
+        //si elijo la opción desactivar ejecuta esta sección del código
+        case 'desactivar'
+        $rspta = $categoria->desactivar($idcategoria);
+        echo $rspta ? "Categoria desactivada" : "No se pudo desactivar";
+        break;
+    case 'activar' :
+        $rspta = $categoria->activar($idcategoria);
+        echo $rspta ? "Categoria activada" : "No se pudo activar";
+        break;
+        case 'mostrar'
+        $rpsta = $categoria->mostrar($idcategoria);
+        //Convertir el resultado en JSON
+        echo json_encode($rspta);
+        break;
+        
+
+
 }
 
 ?>
