@@ -3,8 +3,8 @@
 //../ sale de un nivel del lugar de donde estamos
 require"../config/Conexion.php";
 
-//Creo la clase Categoria 
-class Categoria{
+//Creo la clase Roles
+class roles{
     //Definimos un constructror 
     //Elconstructor se va a ejecutar por primera vez 
     //al ejecutar la clase 
@@ -14,14 +14,14 @@ class Categoria{
     //Definimos un metodo para inserta una categoria a la base de datos 
     public function insertar($nombre, $descripcion){
         //definimos unavariable para almacenar la consulta 
-        $sql ="INSERT INTO categoria (nombre, descripcion, condicion)
-        VALUES ($nombre, $descripcion, '1')";
+        $sql ="INSERT INTO roles (nombre, condicion)
+        VALUES ($nombre, '1')";
         //Retornamos el resultado de la consulta 
         returnejecutarConsulta($sql)
 
     }
-    //Definimos un metodo para editar una categoria 
-    public function editar($idcategoria, $nombre, $descripcion){
+    //Definimos un metodo para editar unos roles
+    public function editar($idroles, $nombre, $descripcion){
         //Definmos una variable para  almacenar una consulta 
         $sql = "UPDATE categoria SET nombre= '$nombre', descripcion= 'descripcion';
         WHERE idcategoria='idcategoria'";
