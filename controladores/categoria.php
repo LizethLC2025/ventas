@@ -15,7 +15,7 @@ switch($_GET ["op"]){
     case 'guardaryeditar':
         if (empty($idcategoria)){
             $rspta = $catergoria-> insertar($nombre, $descripcion);
-            echo $rsparta ? "Categoria resgiatrada con exito" : "No se pudo registrar la categoria a la base de datos";
+            echo $rspta ? "Categoria resgiatrada con exito" : "No se pudo registrar la categoria a la base de datos";
         
         }
         else{
