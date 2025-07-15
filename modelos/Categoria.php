@@ -8,7 +8,7 @@ class Categoria{
     //Definimos un constructror 
     //Elconstructor se va a ejecutar por primera vez 
     //al ejecutar la clase 
-    public function _construct(){
+    public function __construct(){
 
     }
     //Definimos un metodo para inserta una categoria a la base de datos 
@@ -17,13 +17,13 @@ class Categoria{
         $sql ="INSERT INTO categoria (nombre, descripcion, condicion)
         VALUES ($nombre, $descripcion, '1')";
         //Retornamos el resultado de la consulta 
-        returnejecutarConsulta($sql)
+        return ejecutarConsulta($sql)
 
     }
     //Definimos un metodo para editar una categoria 
     public function editar($idcategoria, $nombre, $descripcion){
         //Definmos una variable para  almacenar una consulta 
-        $sql = "UPDATE categoria SET nombre= '$nombre', descripcion= 'descripcion';
+        $sql = "UPDATE categoria SET nombre= '$nombre', descripcion= '$descripcion';
         WHERE idcategoria='idcategoria'";
         return ejecutarConsulta ($sql);
 
